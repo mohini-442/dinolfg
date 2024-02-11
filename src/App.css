@@ -1,38 +1,237 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Chewy&display=swap');
+/* 
+@font-face {
+  font-family: "lucky";
+  src: url(./assets/fonts/LuckyDino.otf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ff-lucky {
+  font-family: "lucky";
+} */
+
+
+* {
+  scroll-behavior: smooth !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.helo-header {
+  animation: fly 7000ms linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(20px, -20px);
+  }
+
+
+
+  100% {
+    transform: translate(0, 0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes walk {
+  0% {
+    background-position: 0px
+  }
+
+  100% {
+    background-size: cover;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes walk2 {
+  0% {
+    background-position: 0px;
+    left: 25%;
+  }
+
+  100% {
+    background-size: cover;
+    left: 95%;
+  }
 }
 
-@keyframes App-logo-spin {
+@keyframes forward {
+  0% {
+    transform: translateX(-100px)
+  }
+
+  100% {
+    transform: translateX(-1600px)
+  }
+}
+
+@keyframes ImgAnimate {
+  0% {
+    transform: translateX(100px)
+  }
+
+  100% {
+    transform: translateX(800px)
+  }
+}
+
+@media (max-width:576px) {
+  @keyframes forward {
+    0% {
+      transform: translateX(-100px) !important
+    }
+
+    100% {
+      transform: translateX(-1000px) !important
+    }
+  }
+}
+
+.walking-img {
+  animation: walk 9s steps(12) infinite, forward 12s linear infinite;
+}
+
+.ImgAnimate {
+  animation: walk2 20000s steps(12) infinite, ImgAnimate 18s linear infinite;
+}
+
+@keyframes mover1 {
+  0% {
+    transform: translateY(-41px);
+  }
+
+  100% {
+    transform: translateY(-51px);
+  }
+}
+
+@keyframes mover2 {
+  0% {
+    transform: translateY(-41px);
+  }
+
+  100% {
+    transform: translateY(-51px);
+  }
+}
+
+.vert_move1 {
+  animation: mover 1.2s infinite alternate;
+}
+
+.vert_move2 {
+  animation: mover1 1.2s infinite alternate;
+}
+
+.vert_move3 {
+  animation: mover2 1.2s infinite alternate;
+}
+
+
+@keyframes mover {
+  0% {
+    transform: translateY(-27px);
+  }
+
+  100% {
+    transform: translateY(-34px);
+  }
+}
+
+/* -----------------------Accordian--------------------------- */
+.accordion {
+  width: 100%;
+  max-width: 801px !important;
+}
+
+.accordion-item {
+  border: 1px solid #fff;
+  border-radius: 40.5px !important;
+  background-color: #09655A !important;
+  box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.13) !important;
+}
+
+.accordion-title {
+  padding: 23px 22px 22px 28px;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  padding: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+.accordion-content.open {
+  max-height: 300px;
+  transform: scale(1);
+  margin-top: -2px;
+  padding: 23px 22px 22px 28px;
+  padding-top: 0 !important;
+}
+
+@media (max-width:640px) {
+  .accordion-title {
+    padding: 16px 16px 16px 18px !important;
+  }
+
+  .accordion-content.open {
+    padding: 16px 16px 16px 18px;
+
+  }
+}
+
+/* --------------------------Preloader------------------------ */
+.typewriter h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+    typing 2s steps(40, end),
+    blink-caret 2s step-end infinite;
+}
+
+@keyframes typing {
   from {
-    transform: rotate(0deg);
+    width: 0
   }
+
   to {
-    transform: rotate(360deg);
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange;
+  }
+}
+
+/* --------------------------Back-To-Top---------------------- */
+.backTopBtn {
+  animation: top_btn 2s linear infinite;
+}
+
+@keyframes top_btn {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
