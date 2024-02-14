@@ -25,7 +25,7 @@ function App() {
   }, []);
   return (
     <>
-      <div className='bg-[#0A4740]'>
+      <div className='bg-[#0A4740] overflow-x-clip'>
         <Loader/>
         <div className='bg-[url(./assets/images/bgheader.webp)] bg-center bg-cover bg-no-repeat min-h-[100vh]'>
           <Header/>
