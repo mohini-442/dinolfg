@@ -52,7 +52,7 @@ function Faq() {
                     className=" mx-auto relative max-w-[800px] px-2 "
                 >
                     <Accordion
-                        className={`border-[#C5C5C5] bg-[#09655A] border mb-4 rounded-full p-[12px] !pr-0 sm:pt-[30px] sm:pb-[27px] sm:ps-[26px] ${open === 1 ? "rounded-[26px] sm:rounded-[45px] " : "rounded-full"
+                        className={`border-[#C5C5C5] bg-[#09655A] border mb-4 rounded-full p-[12px] !pr-0 sm:pt-[30px] sm:pb-[27px] sm:ps-[38px] ${open === 1 ? "rounded-[26px] sm:rounded-[45px] " : "rounded-full"
                             }`}
                         open={open === 1}
                         icon={<Icon id={1} open={open} />}
@@ -70,7 +70,7 @@ function Faq() {
                         </AccordionBody>
                     </Accordion>
                     <Accordion
-                        className={`border-[#C5C5C5] bg-[#09655A] border mb-4 overflow-hidden rounded-full sm:pt-[30px] sm:pb-[27px] p-[12px] !pr-0 sm:ps-[26px] ${open === 2 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
+                        className={`border-[#C5C5C5] bg-[#09655A] border mb-4 overflow-hidden rounded-full sm:pt-[30px] sm:pb-[27px] p-[12px] !pr-0 sm:ps-[38px] ${open === 2 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
                             }`}
                         open={open === 2}
                         icon={<Icon id={2} open={open} />}
@@ -89,7 +89,7 @@ function Faq() {
                         </AccordionBody>
                     </Accordion>
                     <Accordion
-                        className={`border-[#C5C5C5] bg-[#09655A] p-[12px] !pr-0 border mb-4 rounded-full sm:pt-[30px] sm:pb-[27px] sm:ps-[26px] ${open === 3 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
+                        className={`border-[#C5C5C5] bg-[#09655A] p-[12px] !pr-0 border mb-4 rounded-full sm:pt-[30px] sm:pb-[27px] sm:ps-[38px] ${open === 3 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
                             }`}
                         open={open === 3}
                         icon={<Icon id={3} open={open} />}
@@ -107,7 +107,7 @@ function Faq() {
                         </AccordionBody>
                     </Accordion>
                     <Accordion
-                        className={`border-[#C5C5C5] bg-[#09655A] border p-[12px] pr-0 mb-4 rounded-full sm:pt-[30px] sm:pb-[27px] sm:ps-[26px] ${open === 4 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
+                        className={`border-[#C5C5C5] bg-[#09655A] border p-[12px] pr-0 mb-4 rounded-full sm:pt-[30px] sm:pb-[27px] sm:ps-[38px] ${open === 4 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
                             }`}
                         open={open === 4}
                         icon={<Icon id={4} open={open} />}
@@ -125,7 +125,7 @@ function Faq() {
                         </AccordionBody>
                     </Accordion>
                     <Accordion
-                        className={`border-[#C5C5C5] bg-[#09655A] border mb-4 rounded-full p-[12px] !pr-0 sm:pt-[30px] sm:pb-[27px] sm:ps-[26px] ${open === 5 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
+                        className={`border-[#C5C5C5] bg-[#09655A] border mb-4 rounded-full p-[12px] !pr-0 sm:pt-[30px] sm:pb-[27px] sm:ps-[38px] ${open === 5 ? "rounded-[26px] sm:rounded-[45px]" : "rounded-full"
                             }`}
                         open={open === 5}
                         icon={<Icon id={5} open={open} />}
