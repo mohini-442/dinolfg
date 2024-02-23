@@ -5,11 +5,10 @@ import CartoonImg1 from "../assets/images/CartoonImg1.webp";
 import CartoonImg2 from "../assets/images/CartoonImg2.webp";
 
 const Header = () => {
-    const [nav, setNav] = useState(true);
-    if (nav === false) {
-        document.body.classList.add("max-lg:overflow-hidden");
-    } else {
-        document.body.classList.remove("max-lg:overflow-hidden");
+    const [show, setshow] = useState(true);
+    function nav() {
+        setshow(!show);
+        document.body.classList.toggle("max-lg:!overflow-hidden")
     }
     return (
         <>
@@ -37,10 +36,8 @@ const Header = () => {
                         </h1>
                         <div className="flex gap-[136px]">
                             <ul
-                                className={`${nav ? "left-[-100%]" : "left-0"}
-            max-lg:fixed max-lg:top-0 max-lg:h-full max-lg:w-full max-lg:z-[7] bg-white max-lg:transition-all max-lg:ease-linear max-lg:duration-300 max-lg:min-h-screen max-lg:flex-col max-lg:justify-center flex gap-[28px] items-center`}
-                            >
-                                <li onClick={() => setNav(!nav)}>
+                                className={`flex items-center gap-2 mobileView ${show ? "right-[-100%]" : "right-0"}`} >
+                                <li onClick={nav}>
                                     <a
                                         className="hover:after:w-[100%] after:w-0 after:absolute after:mx-auto after:right-0 after:bg-[#000000] after:h-[2px] font-chewy relative after:left-[0] after:bottom-[-2px] after:rounded-[10px] after:transition-all after:duration-300 after:ease-linear ff_chewy text-black text-[18px] font-normal leading-normal no-underline"
                                         href="#About"
@@ -48,7 +45,7 @@ const Header = () => {
                                         About
                                     </a>
                                 </li>
-                                <li onClick={() => setNav(!nav)}>
+                                <li onClick={nav}>
                                     <a
                                         className="hover:after:w-[100%] after:w-0 after:absolute after:mx-auto after:right-0 after:bg-[#000000] after:h-[2px] font-chewy relative after:left-[0] after:bottom-[-2px] after:rounded-[10px] after:transition-all after:duration-300 after:ease-linear ff_chewy text-black text-[18px] font-normal leading-normal no-underline"
                                         href="#Tokenomic"
@@ -56,7 +53,7 @@ const Header = () => {
                                         Tokenomic
                                     </a>
                                 </li>
-                                <li onClick={() => setNav(!nav)}>
+                                <li onClick={nav}>
                                     <a
                                         className="hover:after:w-[100%] after:w-0 after:absolute after:mx-auto after:right-0 after:bg-[#000000] after:h-[2px] font-chewy relative after:left-[0] after:bottom-[-2px] after:rounded-[10px] after:transition-all after:duration-300 after:ease-linear ff_chewy text-black text-[18px] font-normal leading-normal no-underline"
                                         href="#Roadmap"
@@ -64,7 +61,7 @@ const Header = () => {
                                         Roadmap
                                     </a>
                                 </li>
-                                <li onClick={() => setNav(!nav)}>
+                                <li onClick={nav}>
                                     <a
                                         className="hover:after:w-[100%] after:w-0 after:absolute after:mx-auto after:right-0 after:bg-[#000000] after:h-[2px] font-chewy relative after:left-[0] after:bottom-[-2px] after:rounded-[10px] after:transition-all after:duration-300 after:ease-linear ff_chewy text-black text-[18px] font-normal leading-normal no-underline"
                                         href="#Faq"
@@ -74,10 +71,12 @@ const Header = () => {
                                 </li>
                                 <li className="md:hidden">
                                     <div className="flex gap-2 items-center">
-                                        <svg className=" hover:scale-[1.1] duration-[0.5s] cursor-pointer" width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="18.5" cy="18.5" r="18" stroke="black" />
-                                            <path d="M28 12.7793C27.3381 13.0799 26.627 13.2831 25.8794 13.3749C26.6508 12.9018 27.2278 12.1572 27.503 11.28C26.7783 11.7212 25.9851 12.0318 25.158 12.1982C24.6018 11.5895 23.8651 11.186 23.0623 11.0504C22.2594 10.9148 21.4354 11.0547 20.7181 11.4484C20.0007 11.8421 19.4303 12.4675 19.0953 13.2276C18.7602 13.9877 18.6794 14.8399 18.8652 15.6519C17.3968 15.5764 15.9603 15.1851 14.649 14.5036C13.3376 13.8221 12.1807 12.8655 11.2533 11.696C10.9362 12.2568 10.7539 12.9069 10.7539 13.5992C10.7535 14.2225 10.9033 14.8362 11.1898 15.386C11.4763 15.9357 11.8908 16.4045 12.3965 16.7506C11.81 16.7315 11.2366 16.5691 10.7238 16.2768V16.3256C10.7237 17.1998 11.0187 18.0471 11.5587 18.7237C12.0987 19.4003 12.8504 19.8646 13.6863 20.0377C13.1423 20.1886 12.5719 20.2109 12.0183 20.1027C12.2542 20.8549 12.7136 21.5127 13.3322 21.9839C13.9508 22.4551 14.6977 22.7163 15.4683 22.7308C14.1602 23.7835 12.5446 24.3545 10.8815 24.352C10.5869 24.3521 10.2926 24.3344 10 24.2992C11.6881 25.4118 13.6532 26.0023 15.6602 26C22.454 26 26.168 20.2319 26.168 15.2294C26.168 15.0668 26.164 14.9027 26.1569 14.7402C26.8793 14.2046 27.5029 13.5414 27.9984 12.7817L28 12.7793Z" fill="black" />
-                                        </svg>
+                                        <a href="">
+                                            <svg className=" hover:scale-[1.1] duration-[0.5s] cursor-pointer" width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="18.5" cy="18.5" r="18" stroke="black" />
+                                                <path d="M28 12.7793C27.3381 13.0799 26.627 13.2831 25.8794 13.3749C26.6508 12.9018 27.2278 12.1572 27.503 11.28C26.7783 11.7212 25.9851 12.0318 25.158 12.1982C24.6018 11.5895 23.8651 11.186 23.0623 11.0504C22.2594 10.9148 21.4354 11.0547 20.7181 11.4484C20.0007 11.8421 19.4303 12.4675 19.0953 13.2276C18.7602 13.9877 18.6794 14.8399 18.8652 15.6519C17.3968 15.5764 15.9603 15.1851 14.649 14.5036C13.3376 13.8221 12.1807 12.8655 11.2533 11.696C10.9362 12.2568 10.7539 12.9069 10.7539 13.5992C10.7535 14.2225 10.9033 14.8362 11.1898 15.386C11.4763 15.9357 11.8908 16.4045 12.3965 16.7506C11.81 16.7315 11.2366 16.5691 10.7238 16.2768V16.3256C10.7237 17.1998 11.0187 18.0471 11.5587 18.7237C12.0987 19.4003 12.8504 19.8646 13.6863 20.0377C13.1423 20.1886 12.5719 20.2109 12.0183 20.1027C12.2542 20.8549 12.7136 21.5127 13.3322 21.9839C13.9508 22.4551 14.6977 22.7163 15.4683 22.7308C14.1602 23.7835 12.5446 24.3545 10.8815 24.352C10.5869 24.3521 10.2926 24.3344 10 24.2992C11.6881 25.4118 13.6532 26.0023 15.6602 26C22.454 26 26.168 20.2319 26.168 15.2294C26.168 15.0668 26.164 14.9027 26.1569 14.7402C26.8793 14.2046 27.5029 13.5414 27.9984 12.7817L28 12.7793Z" fill="black" />
+                                            </svg>
+                                        </a>
                                         <svg className=" hover:scale-[1.1] duration-[0.5s] cursor-pointer" width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="18.5" cy="18.5" r="18" stroke="black" />
                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4863 11.0984C14.4308 11.327 13.1618 11.7316 12.3368 12.1024C12.0591 12.2272 12.0056 12.2709 11.863 12.4888C10.3251 14.8393 9.41346 17.2533 9.0977 19.8113C9.00993 20.5222 8.96969 22.3113 9.02603 22.9955C9.06077 23.4171 9.08322 23.5239 9.14748 23.5732C9.80307 24.0761 11.2749 24.9157 12.221 25.3265C12.9274 25.6332 13.9006 25.99 14.0576 25.9997C14.1456 26.0052 14.2125 25.9324 14.4835 25.5363C14.6603 25.2779 14.8978 24.8944 15.0113 24.6841L15.2177 24.3016L15.0326 24.2314C14.7445 24.122 13.6034 23.5605 13.574 23.5136C13.5595 23.4905 13.6314 23.4041 13.7336 23.3215L13.9195 23.1713L14.3679 23.3566C17.3555 24.5911 20.6386 24.5932 23.6169 23.3625L24.0611 23.179L24.2345 23.3048C24.3299 23.3739 24.4079 23.4558 24.4079 23.4868C24.4079 23.5442 23.5208 24.0046 23.0764 24.1778C22.9413 24.2305 22.8208 24.2895 22.8086 24.3091C22.7807 24.3536 23.1948 25.0775 23.5578 25.6184C23.8825 26.1024 23.7733 26.0907 24.7273 25.7443C25.9789 25.2899 27.151 24.7026 28.235 23.9868C28.5308 23.7914 28.8074 23.6055 28.8495 23.5737C28.9664 23.4856 29.0209 22.6466 28.9927 21.3653C28.9544 19.621 28.7033 18.1572 28.1739 16.5916C27.7263 15.2681 26.9293 13.6651 26.1489 12.5188L25.9449 12.219L25.4676 12.0203C24.7836 11.7356 24.1627 11.5231 23.4557 11.332C22.7183 11.1326 21.9243 10.9717 21.8382 11.0042C21.8042 11.0171 21.6663 11.251 21.532 11.5241C21.3976 11.7971 21.2854 12.0235 21.2828 12.0271C21.2801 12.0308 21.0863 12.0072 20.8521 11.9748C20.1315 11.8751 18.4539 11.8528 17.6225 11.9317C17.2281 11.9692 16.864 12.0097 16.8134 12.0218C16.7318 12.0413 16.6922 11.9851 16.4658 11.5282C16.1649 10.921 16.2113 10.9413 15.4863 11.0984ZM15.971 17.2904C16.6341 17.4145 17.2153 17.9815 17.407 18.6915C17.5426 19.1936 17.445 19.9012 17.1781 20.3517C16.8935 20.8319 16.3504 21.1822 15.8246 21.2247C14.3788 21.3415 13.4109 19.6446 14.1276 18.2497C14.3568 17.8035 14.8377 17.4223 15.316 17.3076C15.5869 17.2426 15.6996 17.2397 15.971 17.2904ZM22.9198 17.3724C23.3349 17.528 23.7033 17.8742 23.9284 18.3204C24.2027 18.8643 24.1806 19.6797 23.8756 20.2734C23.6059 20.7982 23.0265 21.1888 22.4583 21.2289C21.6511 21.2859 20.9284 20.7577 20.6337 19.8953C20.5192 19.5605 20.5297 18.8721 20.6544 18.5338C21.0235 17.5319 22.0041 17.0292 22.9198 17.3724Z" fill="black" />
@@ -89,7 +88,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="md:hidden">
-                                    <div className=" bg-BgButton bg-center bg-repeat bg-BgSize">
+                                    <div className="bg-[url(./assets/images/bgButton.webp)]  bg-center bg-repeat bg-BgSize">
                                         <button className="text-black hover:text-white transition-colors font-chewy ease-linear duration-500 leading-[131%] px-[36px] pt-[11px] pb-[19.57px] ff_chewy text-[18px] font-normal ">
                                             Join Now
                                         </button>
@@ -118,23 +117,21 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <div
-                            onClick={() => setNav(!nav)}
-                            className="lg:hidden w-[27px] h-[21px] mr-[17px] relative z-[7] flex justify-between flex-col"
-                        >
-                            <span
-                                className={`${nav ? "" : "rotate-[50deg] translate-y-[15px]"
-                                    } bg-black h-[4px] w-full duration-300 rounded-[3px] ease-linear transition-all`}
-                            ></span>
-                            <span
-                                className={`${nav ? "" : "hidden"
-                                    } bg-black h-[4px] w-full duration-300 rounded-[3px] ease-linear transition-all`}
-                            ></span>
-                            <span
-                                className={`${nav ? "" : "rotate-[-50deg] translate-y-[-50%]"
-                                    } bg-black h-[4px] w-full duration-300 rounded-[3px] ease-linear transition-all`}
-                            ></span>
-                        </div>
+
+                        <label className=" lg:hidden" onClick={nav}>
+                            {show ? (
+                                <div className="z-20 relative pl-2">
+                                    <span className="flex bg-[#000] h-[3px] rounded-3xl duration-300 w-6"></span>
+                                    <span className="flex bg-[#000] h-[3px] rounded-3xl duration-300 w-6 mt-1"></span>
+                                    <span className="flex bg-[#000] h-[3px] rounded-3xl duration-300 w-6 mt-1"></span>
+                                </div>
+                            ) : (
+                                <div className="z-20 relative">
+                                    <span className="flex bg-[#000] absolute rounded-3xl -left-7 duration-300 top-1 rotate-45 h-[3px] w-6"></span>
+                                    <span className="flex bg-[#000] absolute rounded-3xl -left-7 duration-300 -rotate-45 h-[3px] w-6 mt-1"></span>
+                                </div>
+                            )}
+                        </label>
                     </div>
                     <div className="flex sm:flex-row flex-col-reverse items-center flex-wrap sm:pt-[83px] pt-[32px]">
                         <div className="sm:w-5/12 w-full pt-[32px] sm:pt-0 flex items-end justify-center sm:justify-start">
@@ -162,7 +159,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 };

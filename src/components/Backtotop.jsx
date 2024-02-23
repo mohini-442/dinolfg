@@ -20,7 +20,7 @@ const Backtotop = () => {
     return (
         <>
             <div className='container mx-auto px-3 max-w-[1150px]'>
-                <div onClick={() => setPosition({ ...position, position: { top: 0, left: 0 } })} className="fixed hidden bottom-[1%] right-[1%] z-30 translate-y-[0%] animate-bounce"
+                <div onClick={() => setPosition({ ...position, position: { top: 0, left: 0 } })} className="fixed hidden bottom-[1%] right-[1%] z-10 translate-y-[0%] animate-bounce"
                     ref={scrollTop}
                 ><div className=' cursor-pointer w-[50px] h-[50px] bg-[#FFF] border-[4px] border-[#000072] flex items-center justify-center rounded-[50%] scroll-smooth transform-[all] transform-[.3s] transform-[linear]'>
                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
