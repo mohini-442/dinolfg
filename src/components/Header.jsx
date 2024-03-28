@@ -36,7 +36,7 @@ const Header = () => {
                         </h1>
                         <div className="flex gap-[136px]">
                             <ul
-                                className={`flex items-center gap-2 mobileView ${show ? "right-[-100%]" : "right-0"}`} >
+                                className={`flex items-center gap-4 mobileView ${show ? "right-[-100%]" : "right-0"}`} >
                                 <li onClick={nav}>
                                     <a
                                         className="hover:after:w-[100%] after:w-0 after:absolute after:mx-auto after:right-0 after:bg-[#000000] after:h-[2px] font-chewy relative after:left-[0] after:bottom-[-2px] after:rounded-[10px] after:transition-all after:duration-300 after:ease-linear ff_chewy text-black text-[18px] font-normal leading-normal no-underline"
